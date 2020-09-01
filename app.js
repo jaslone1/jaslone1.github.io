@@ -4,6 +4,18 @@ $(() => {
 
       const userInput = $('input[type="text"]').val()
 
+      let currentImgIndex = 0;
+      const numOfImages = $('.albumArt').children().length - 1;
+      $('.button-next').on('click', () => {
+        $('.albumArt').children().eq(currentImgIndex).hide();
+        if (currentImgIndex < numOfImages) {
+            currentImgIndex++;
+        } else {
+          currentImgIndex = 0
+        }
+        $('.albumArt').children().eq(currentImgIndex).show();
+      })
+      
     $.ajax({
   	   url: 'https://www.theaudiodb.com/api/v1/json/1/search.php?s=' + userInput
     }).then(

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="second.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="main.css">
     <title>Music carousel</title>
   </head>
@@ -12,37 +12,41 @@
       <img class="banner" src="">
     </div>
     <div class="header">
-      <h1> Music</h1>
+      <h1>Enter any band name below</h1>
     </div>
     <div class="userInput">
       <form>
-  	     <input type="text" placeholder="Artist"/>
-  	     <input type="submit" value="Search Artist" />
+  	     <input class="searchBar "type="text" placeholder="Band Name"/>
+  	     <input class="searchBtn" type="submit" value="Search Band" />
       </form>
     </div>
     <div class="showResults">
-      <dl>
-        <dt></dt>
-        <dd id="title">
-        </dd>
-      </dl>
-    </div>
-    <div class="carousel">
 
-      <div class="albumArt">
-        <img class="pic1" src="">
-        <img class="pic2" src="">
+        <div class="title"></div>
+
+      <div id="estab">
+
       </div>
-
       <div class ="button-row">
         <button id="buttonPic1">Picture 1</button>
         <button id="buttonPic2">Picture 2</button>
         <button id="bio">bio</button>
       </div>
 
-      <div id="estab">
+    </div>
+    <div class="carousel">
 
+      <div class="albumArt">
+        <div class="">
+
+        </div>
+        <img class="pic1" src="">
+        <img class="pic2" src="">
+        <div class="bio"></div>
       </div>
+
+
+
     </div>
   </body>
 </html>

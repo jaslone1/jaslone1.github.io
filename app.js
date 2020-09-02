@@ -33,8 +33,17 @@ $(() => {
       url: 'https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=' + userInput
     }).then(
       (data)=>{
-        console.log(data);
+        const discoBtn = '<input type="button" value="discography" id="discoBTN"/>';
+        $disco = $('<div>')
+        $('body').append($disco)
+        $($disco).append(discoBtn)
+        console.log(discoBtn);
+        $('#discoBTN').on('click', () => {
+          for (var i = 0; i < data.album.length; i++) {
+              console.log(data.album[i].strAlbum);
+          }
+        })
       })
     }
-    );
-  })
+  );
+})

@@ -18,19 +18,16 @@ $(() => {
         let currentIndex = 0;
         const numOfImages = $('.albumArt').children().length - 1;
 
-        const nextBtn = '<input type="button" value="next" id="nextBTN"/>';
-        $next = $('<div>')
-        $('.carousel').append($next)
-        $($next).append(nextBtn)
-          $('#nextBTN').on('click', () => {
-          $('.albumArt').children().eq(currentIndex).hide();
-          if (currentIndex < numOfImages) {
-            currentIndex++;
-          } else {
-            currentIndex = 0
-          }
-            $('.albumArt').children().eq(currentIndex).show();
-          })
+        $('.carousel').on('click', () => {
+        $('.albumArt').children().eq(currentIndex).hide();
+        if (currentIndex < numOfImages) {
+          currentIndex++;
+        } else {
+          currentIndex = 0
+        }
+          $('.albumArt').children().eq(currentIndex).show();
+        })
+
         console.log(data);
       })
     $.ajax({

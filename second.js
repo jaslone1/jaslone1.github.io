@@ -24,11 +24,8 @@ $(() => {
         let currentIndex = 0;
         const numOfImages = $('.albumArt').children().length - 1;
 
-        const nextBtn = '<input type="button" value="next" id="nextBTN"/>';
-        $next = $('<div>')
-        $('.carousel').append($next)
-        $($next).append(nextBtn)
-          $('#nextBTN').on('click', () => {
+
+          $('.carousel').on('click', () => {
           $('.albumArt').children().eq(currentIndex).hide();
           if (currentIndex < numOfImages) {
             currentIndex++;
@@ -37,30 +34,30 @@ $(() => {
           }
             $('.albumArt').children().eq(currentIndex).show();
           })
+        })
 
-        console.log(data);
       $.ajax({
         url: 'https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=' + userInput
       }).then(
         (data)=>{
-
-          const discoBtn = '<input type="button" value="discography" id="discoBTN"/>';
-          $disco = $('<div>')
-          $('body').append($disco)
-          $($disco).append(discoBtn)
-          console.log(discoBtn);
-          $('#discoBTN').on('click', () => {
-
-            var discography = (data.album.length)
-
-            for (var i = 0; i < data.album.length; i++) {
-                console.log(data.album[i].strAlbum);
-                $('#list').append().text(data.album[i].strAlbum)
-
+          const albumArray = []
+          for (var i = 0; i < data.album.length; i++){
+            name = data.album[i].strAlbum;
+            albumArray.push(name);
           }
+              const $modal = $('<div>').addClass('modal').text(albumArray);
+              const $discoBtn = '<input type="button" value="discography" id="discoBTN"/>';
+              $('#disco').append($discoBtn)
+              $('body').append($modal)
+        //
+          $(discoBTN).on('click', () => {
+            $('.modal').css('display','block')
+        })
+          $('.modal').on('click', () => {
+            $modal.css('display', 'none')
+          })
+        // )
       })
-    }
-    );
+      }
+    )
   })
-  })
-})

@@ -1,3 +1,4 @@
+alert("Search a band to see album art and info")
 $(() => {
   $('form').on('submit', event=>{
       event.preventDefault();

@@ -50,14 +50,14 @@ $(() => {
               const $discoBtn = '<input type="button" value="discography" id="discoBTN"/>';
               $('#disco').append($discoBtn)
               $('body').append($modal)
-        //
+        
           $(discoBTN).on('click', () => {
             $('.modal').css('display','block')
         })
           $('.modal').on('click', () => {
             $modal.css('display', 'none')
           })
-        // )
+
       })
       }
     )

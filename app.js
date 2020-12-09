@@ -41,23 +41,17 @@ $(() => {
         url: 'https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=' + userInput
       }).then(
         (data)=>{
-          const albumArray = []
           for (var i = 0; i < data.album.length; i++){
             name = data.album[i].strAlbum;
-            albumArray.push(name);
+            $('.discoList').append('<li>' + name + '</li>')
           }
-              const $modal = $('<div>').addClass('modal').text(albumArray);
+              
               const $discoBtn = '<input type="button" value="discography" id="discoBTN"/>';
               $('#disco').append($discoBtn)
-              $('body').append($modal)
-        
-          $(discoBTN).on('click', () => {
-            $('.modal').css('display','block')
-        })
-          $('.modal').on('click', () => {
-            $modal.css('display', 'none')
-          })
 
+          $(discoBTN).on('click', () => {
+            $('#myModal').css('display','block')
+        })
       })
       }
     )

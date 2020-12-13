@@ -45,14 +45,20 @@ $(() => {
             name = data.album[i].strAlbum;
             $('.discoList').append('<li>' + name + '</li>')
           }
-              
+
               const $discoBtn = '<input type="button" value="discography" id="discoBTN"/>';
               $('#disco').append($discoBtn)
 
           $(discoBTN).on('click', () => {
             $('#myModal').css('display','block')
+          })
+
+          $('.close').on('click', () => {
+            $('#myModal').css('display','none')
+          })
+
+
         })
       })
       }
     )
-  })

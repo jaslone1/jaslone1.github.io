@@ -5,6 +5,7 @@ $(() => {
 
 
       $('.header').hide();
+      $('.userInput').hide();
       const userInput = $('input[type="text"]').val()
 
 
